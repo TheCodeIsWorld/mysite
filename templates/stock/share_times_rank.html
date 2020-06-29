@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>分红次数排序</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body>
+        {% if stocks %}
+            <ul>
+            {% for stock in stocks %}
+                <li><a href="{% url 'stock:detail' stock.ts_code%}">{{ stock.ts_code }}--{{ stock.name }}--{{ stock.share_times }}次</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No stocks are available.</p>
+        {% endif %}
+    </body>
+</html>
